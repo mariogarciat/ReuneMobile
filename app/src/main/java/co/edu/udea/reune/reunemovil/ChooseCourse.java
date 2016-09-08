@@ -2,20 +2,39 @@ package co.edu.udea.reune.reunemovil;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChooseCourse extends AppCompatActivity {
+public class ChooseCourse extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+
+    private EditText inputKeyWord;
+    private Spinner inputAcUnit;
+    private String acUnit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_course);
 
-        List<String> spinnerArray =  new ArrayList<String>();
+        inputKeyWord = (EditText) findViewById(R.id.key_word);
+        inputAcUnit = (Spinner) findViewById(R.id.spinner);
+
+        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.planets_array, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
+
+
+ /*       List<String> spinnerArray =  new ArrayList<String>();
 
         spinnerArray.add("---");
         spinnerArray.add("CORPORACIÓN ACADÉMICA PARA ESTUDIO DE PATOLOGÍAS TROPICALES");
@@ -55,18 +74,43 @@ public class ChooseCourse extends AppCompatActivity {
         spinnerArray.add("VICERRECTORIA DE EXTENSION");
         spinnerArray.add("VICERRECTORIA DE INVESTIGACION");
 
-
-
-
-
-
-
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                 this, android.R.layout.simple_spinner_item, spinnerArray);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         Spinner sItems = (Spinner) findViewById(R.id.spinner);
-        sItems.setAdapter(adapter);
+        sItems.setAdapter(adapter);*/
 
+    }
+
+
+
+    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+        // An item was selected. You can retrieve the selected item using
+        // parent.getItemAtPosition(pos)
+        acUnit = parent.getItemAtPosition(pos).toString();
+
+
+    }
+
+    public void onNothingSelected(AdapterView<?> parent) {
+        // Another interface callback
+    }
+
+
+    public void onConsultClick(View v){
+
+        String keyWord = inputKeyWord.getText().toString();
+
+        if(!keyWord.isEmpty()){
+
+        }else {
+            Toast.makeText(getApplicationContext(),"Ingrese palabra clave", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    public void onSearchClick(View v){
+        //String acUnit =  inputAcUnit
     }
 }

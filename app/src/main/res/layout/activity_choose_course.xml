@@ -18,25 +18,42 @@
         android:background="#FFF"
         android:orientation="vertical">
 
-        <EditText
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/editText"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="48dp"
-            android:hint="Palabra clave"
-            android:paddingBottom="20dp"/>
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Buscar curso:"
-            android:textSize="18dp"
-            android:layout_marginBottom="20dp"
-            android:id="@+id/textView"/>
+            android:text="Cursos de Extensión"
+            android:textColor="@android:color/black"
+            android:textSize="25dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp">
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/key_word"
+                android:layout_marginTop="40dp"
+                android:textSize="16dp"
+                android:hint="Palabra clave"
+                android:paddingBottom="12dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Consultar"
+                android:background="#ff9357"
+                android:id="@+id/btnConsult"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                android:onClick="onConsultClick"/>
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -47,9 +64,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
                 android:text="Unidad Académica o Administrativa:"
                 android:layout_marginRight="20dp"
-                android:id="@+id/textView2"/>
+                android:id="@+id/ac_unit"
+                android:textSize="16dp"/>
 
             <Spinner
                 android:layout_width="wrap_content"
@@ -61,11 +80,12 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Consultar"
-            android:id="@+id/button"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="40dp" />
+            android:text="Cursos"
+            android:id="@+id/btnSearch"
+            android:background="#ff9357"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="40dp"
+            android:onClick="onSearchClick"/>
 
 
 
