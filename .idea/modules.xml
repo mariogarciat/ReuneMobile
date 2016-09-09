@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ReuneMovil.iml" filepath="$PROJECT_DIR$/ReuneMovil.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ReuneMobile.iml" filepath="$PROJECT_DIR$/ReuneMobile.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

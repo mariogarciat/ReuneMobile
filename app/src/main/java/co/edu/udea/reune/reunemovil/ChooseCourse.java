@@ -1,5 +1,6 @@
 package co.edu.udea.reune.reunemovil;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -103,7 +104,8 @@ public class ChooseCourse extends AppCompatActivity implements AdapterView.OnIte
         String keyWord = inputKeyWord.getText().toString();
 
         if(!keyWord.isEmpty()){
-
+            Intent intent = new Intent(getApplicationContext(), CourseList.class);
+            startActivity(intent);
         }else {
             Toast.makeText(getApplicationContext(),"Ingrese palabra clave", Toast.LENGTH_SHORT).show();
         }
